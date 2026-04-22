@@ -47,10 +47,6 @@
     </div>
     <!-- Preloader End -->
 
-    <!-- form loader -->
-    <div class="loading" id="loader" style="display:none;">Loading&#8230;</div>
-    <!-- form loader -->
-
     <!-- Header Start -->
     <header class="main-header">
         <div class="header-sticky">
@@ -153,32 +149,24 @@
                             <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp"
                                 data-wow-delay="0.4s">
                                 <div class="row">
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="text" name="name" class="form-control" id="name"
-                                            placeholder="Name*" required>
+                                    <div class="form-group col-md-6 mb-4"> <input type="text" name="name"
+                                            class="form-control" id="name" placeholder="Name*" required="">
                                         <div class="help-block with-errors"></div>
                                     </div>
-
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="email" name="email" class="form-control" id="email"
-                                            placeholder="Email Address*" required>
+                                    <div class="form-group col-md-6 mb-4"> <input type="email" name="email"
+                                            class="form-control" id="email" placeholder="Email Address*" required="">
                                         <div class="help-block with-errors"></div>
                                     </div>
-
-                                    <div class="form-group col-md-12 mb-4">
-                                        <input type="text" name="phone" class="form-control" id="phone"
-                                            placeholder="Your Phone" required>
+                                    <div class="form-group col-md-12 mb-4"> <input type="text" name="phone"
+                                            class="form-control" id="phone" placeholder="Your Phone" required="">
                                         <div class="help-block with-errors"></div>
                                     </div>
-
-                                    <div class="form-group col-md-12 mb-5">
-                                        <textarea name="message" class="form-control" id="message" rows="4"
+                                    <div class="form-group col-md-12 mb-5"> <textarea name="message"
+                                            class="form-control" id="message" rows="4"
                                             placeholder="Your Message"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
-
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn-default">submit</button>
+                                    <div class="col-md-12"> <button type="submit" class="btn-default">submit</button>
                                         <div id="msgSubmit" class="h3 hidden"></div>
                                     </div>
                                 </div>
@@ -441,24 +429,21 @@
             emailjs.init("KLNoewXBL_m2fCEVJ");
         })();
 
-        const loader = document.getElementById("loader");
-        const submitBtn = document.querySelector("button[type='submit']");
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.querySelector("#contactForm button[type='submit']");
 
-        function showLoader() {
-            loader.style.display = "block";
-        }
+        // Create loader inside button (NO HTML CHANGE REQUIRED)
+        const originalBtnText = submitBtn.innerHTML;
 
-        function hideLoader() {
-            loader.style.display = "none";
-        }
-
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
+        form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // ✅ disable button first
+            // 🔥 LOADING STATE
             submitBtn.disabled = true;
-
-            showLoader();
+            submitBtn.innerHTML = `
+        Sending...
+        <span class="spinner-border spinner-border-sm ms-2" role="status"></span>
+    `;
 
             const formData = {
                 name: document.getElementById("name").value,
@@ -468,57 +453,66 @@
             };
 
             emailjs.send("service_7pz312s", "template_0txpthm", formData)
-                .then(function () {
+                .then(() => {
 
-                    hideLoader();
-                    submitBtn.disabled = false;
+                    resetButton();
 
                     showModal(
-                        "✔ Message sent successfully!",
+                        "✔ Message Sent!",
                         "We will contact you soon.",
                         "success"
                     );
 
-                    document.getElementById("contactForm").reset();
+                    form.reset();
 
-                }, function () {
+                })
+                .catch(() => {
 
-                    hideLoader();
-                    submitBtn.disabled = false;
+                    resetButton();
 
                     showModal(
-                        "✖ Failed to send message!",
+                        "✖ Failed!",
                         "Please try again later.",
                         "error"
                     );
                 });
         });
+
+        function resetButton() {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+
+        // Modal function
+        function showModal(title, message, type) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalMessage").innerText = message;
+
+            const icon = document.getElementById("modalIcon");
+
+            if (type === "success") {
+                icon.innerHTML = "✔";
+                icon.style.color = "green";
+            } else {
+                icon.innerHTML = "✖";
+                icon.style.color = "red";
+            }
+
+            const modal = new bootstrap.Modal(document.getElementById("statusModal"));
+            modal.show();
+        }
     </script>
 
     <!-- Status Modal -->
-    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="statusModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-3">
+            <div class="modal-content p-4 text-center">
 
-                <div class="modal-body">
+                <div id="modalIcon"></div>
+                <h5 id="modalTitle"></h5>
+                <p id="modalMessage"></p>
 
-                    <!-- Icon -->
-                    <div id="modalIcon" class="mb-3"></div>
-
-                    <!-- Title -->
-                    <h5 id="modalTitle" class="fw-bold"></h5>
-
-                    <!-- Message -->
-                    <p id="modalMessage" class="mb-0"></p>
-
-                </div>
-
-                <div class="modal-footer justify-content-center border-0">
-                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
-                        OK
-                    </button>
-                </div>
-
+                <button class="btn btn-primary mt-3" data-bs-dismiss="modal">OK</button>
             </div>
         </div>
     </div>
