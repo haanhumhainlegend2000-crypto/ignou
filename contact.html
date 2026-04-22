@@ -47,6 +47,10 @@
     </div>
     <!-- Preloader End -->
 
+    <!-- form loader -->
+    <div class="loading" id="loader" style="display:none;">Loading&#8230;</div>
+    <!-- form loader -->
+
     <!-- Header Start -->
     <header class="main-header">
         <div class="header-sticky">
@@ -431,25 +435,30 @@
     <script src="js/function.js"></script>
     <!-- email js -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <script>
         (function () {
             emailjs.init("KLNoewXBL_m2fCEVJ");
         })();
 
-        const preloader = document.querySelector(".preloader");
+        const loader = document.getElementById("loader");
+        const submitBtn = document.querySelector("button[type='submit']");
 
         function showLoader() {
-            preloader.style.display = "flex";
+            loader.style.display = "block";
         }
 
         function hideLoader() {
-            preloader.style.display = "none";
+            loader.style.display = "none";
         }
 
         document.getElementById("contactForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
-            showLoader(); // 👈 loader start
+            // ✅ disable button first
+            submitBtn.disabled = true;
+
+            showLoader();
 
             const formData = {
                 name: document.getElementById("name").value,
@@ -461,10 +470,11 @@
             emailjs.send("service_7pz312s", "template_0txpthm", formData)
                 .then(function () {
 
-                    hideLoader(); // 👈 stop loader
+                    hideLoader();
+                    submitBtn.disabled = false;
 
                     showModal(
-                        "Message sent successfully!",
+                        "✔ Message sent successfully!",
                         "We will contact you soon.",
                         "success"
                     );
@@ -473,16 +483,18 @@
 
                 }, function () {
 
-                    hideLoader(); // 👈 stop loader
+                    hideLoader();
+                    submitBtn.disabled = false;
 
                     showModal(
-                        "Failed to send message!",
+                        "✖ Failed to send message!",
                         "Please try again later.",
                         "error"
                     );
                 });
         });
     </script>
+
     <!-- Status Modal -->
     <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
