@@ -32,6 +32,8 @@
     <link href="css/animate.css" rel="stylesheet">
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- contact css -->
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
@@ -434,8 +436,20 @@
             emailjs.init("KLNoewXBL_m2fCEVJ");
         })();
 
+        const preloader = document.querySelector(".preloader");
+
+        function showLoader() {
+            preloader.style.display = "flex";
+        }
+
+        function hideLoader() {
+            preloader.style.display = "none";
+        }
+
         document.getElementById("contactForm").addEventListener("submit", function (e) {
             e.preventDefault();
+
+            showLoader(); // 👈 loader start
 
             const formData = {
                 name: document.getElementById("name").value,
@@ -447,6 +461,8 @@
             emailjs.send("service_7pz312s", "template_0txpthm", formData)
                 .then(function () {
 
+                    hideLoader(); // 👈 stop loader
+
                     showModal(
                         "Message sent successfully!",
                         "We will contact you soon.",
@@ -457,35 +473,15 @@
 
                 }, function () {
 
+                    hideLoader(); // 👈 stop loader
+
                     showModal(
                         "Failed to send message!",
                         "Please try again later.",
                         "error"
                     );
-
                 });
         });
-
-        function showModal(title, message, type) {
-            document.getElementById("modalTitle").innerText = title;
-            document.getElementById("modalMessage").innerText = message;
-
-            const icon = document.getElementById("modalIcon");
-            const titleEl = document.getElementById("modalTitle");
-
-            if (type === "success") {
-                icon.innerHTML = "✔️";
-                icon.style.color = "green";
-                titleEl.style.color = "green";
-            } else {
-                icon.innerHTML = "❌";
-                icon.style.color = "red";
-                titleEl.style.color = "red";
-            }
-
-            const modal = new bootstrap.Modal(document.getElementById('statusModal'));
-            modal.show();
-        }
     </script>
     <!-- Status Modal -->
     <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
@@ -495,7 +491,7 @@
                 <div class="modal-body">
 
                     <!-- Icon -->
-                    <div id="modalIcon" class="mb-3" style="font-size: 50px;"></div>
+                    <div id="modalIcon" class="mb-3"></div>
 
                     <!-- Title -->
                     <h5 id="modalTitle" class="fw-bold"></h5>
