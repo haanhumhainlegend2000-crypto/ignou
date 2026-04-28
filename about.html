@@ -32,6 +32,8 @@
     <link href="css/animate.css" rel="stylesheet">
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="css/mousecursor.css">
     <!-- about css -->
     <link rel="stylesheet" href="css/about.css">
 </head>
@@ -125,7 +127,7 @@
                     <div class="about-us-images">
                         <!-- About Image 1 Start -->
                         <div class="about-img-1">
-                            <figure class="image-anime ">
+                            <figure class="image-anime reveal">
                                 <img src="images/about-img-1.webp" alt="about-img-1">
                             </figure>
                         </div>
@@ -133,7 +135,7 @@
 
                         <!-- About Image 2 Start -->
                         <div class="about-img-2">
-                            <figure class="image-anime ">
+                            <figure class="image-anime reveal">
                                 <img src="images/about-img-2.webp" alt="about-img-2">
                             </figure>
 
@@ -150,7 +152,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <span class="wow fadeInUp headingTag">about us</span>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Ethos Drafting Studio</h2>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Ethos Drafting <em>Studio</em></h2>
                             <p class="wow fadeInUp" data-wow-delay="0.2s"><b>Ethos Drafting Studio</b> was established
                                 to close the critical gap between architectural vision and
                                 fabrication reality. We deliver high-precision technical documentation and visualization
@@ -196,19 +198,6 @@
                                 </div>
                                 <!-- About Contact Item End -->
 
-                                <!-- About Contact Item Start -->
-                                <div class="about-contact-item wow fadeInUp" data-wow-delay="0.6s">
-                                    <div class="icon-box">
-                                        <figure class="image-anime">
-                                            <img src="images/author-1.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="about-contact-content">
-                                        <h3>Founder Name</h3>
-                                        <p>co founder</p>
-                                    </div>
-                                </div>
-                                <!-- About Contact Item End -->
                             </div>
                             <!-- About Content Info End -->
                         </div>
@@ -271,12 +260,11 @@
     <!-- About Us Section End -->
 
     <!-- capabilities section start -->
-    <section class="cap-hero">
+    <section class="cap-hero section-title">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-lg-7">
-                    <p class="eyebrow">What we do</p>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Ethos Drafting Studio</h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">What we <em>do</em></h2>
                     <p class="hero-desc">We provide a comprehensive suite of drafting and visualization services that
                         move projects seamlessly from concept to installation, powered by industry-standard platforms
                         including</p>
@@ -439,62 +427,119 @@
 
     <hr class="divider-line">
 
-    <!-- BOTTOM BAR -->
-    <section class="bottom-bar">
-        <div class="container">
-            <div class="row g-0 text-center">
-                <div class="col-6 col-md-3 py-2">
-                    <p class="stat-val">AWI</p>
-                    <p class="stat-lbl">Millwork standard compliance</p>
-                </div>
-                <div class="col-6 col-md-3 py-2 stat-divider">
-                    <p class="stat-val">TCNA</p>
-                    <p class="stat-lbl">Tile system standard</p>
-                </div>
-                <div class="col-6 col-md-3 py-2 stat-divider">
-                    <p class="stat-val">CNC</p>
-                    <p class="stat-lbl">Fabrication-ready output</p>
-                </div>
-                <div class="col-6 col-md-3 py-2 stat-divider">
-                    <p class="stat-val">4 core</p>
-                    <p class="stat-lbl">Service disciplines</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- capabilities section end-->
+    <!-- mission section start -->
+    <section class="mission-section">
+        <div class="container-xl px-4 px-lg-5">
 
-    <!-- Vision Mission Start -->
-    <div class="vision-mission">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Vision Mission Box Start -->
-                    <div class="vision-mission-box">
-                        <!-- Vision Mission Item Start -->
-                        <div class="vision-mission-item wow fadeInUp">
-                            <div class="icon-box">
-                                <img src="images/icon-our-mission.svg" alt="">
+            <div class="cards-grid">
+
+                <!-- Mission -->
+                <div class="about-card anim anim-2">
+                    <span class="card-number">01</span>
+                    <div class="card-icon-wrap">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="8" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Our Mission</h3>
+                    <div class="card-divider"></div>
+                    <div class="card-text">
+                        <p>To serve as a trusted partner in architectural and engineering documentation by delivering
+                            high-quality, cost-effective solutions with precision turnarounds.</p>
+                        <p>We believe technical documentation should be the strongest link in the project
+                            chain—providing the definitive blueprint for craftsmanship and ensuring every design intent
+                            is executed with integrity, clarity, and precision.</p>
+                    </div>
+                </div>
+
+                <!-- Story -->
+                <div class="about-card anim anim-3">
+                    <span class="card-number">02</span>
+                    <div class="card-icon-wrap">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Our Story</h3>
+                    <div class="card-divider"></div>
+                    <div class="card-text">
+                        <p>Founded by experienced architectural professionals, Ethos Drafting Studios emerged from a
+                            simple observation: the construction industry needed drafting services that combined
+                            technical precision with true understanding of field conditions.</p>
+                        <p>Over the years, we have refined our processes to deliver drawings that contractors can rely
+                            on. Our expertise spans residential, commercial, and restoration projects, with a particular
+                            focus on complex tile and stone installations, custom millwork, and advanced 3D
+                            visualization.</p>
+                        <p>Today, architects, designers, and contractors across the region trust us to translate their
+                            visions into technical drawings that work in the real world. Every project receives the same
+                            attention to detail and commitment to accuracy that built our reputation.</p>
+                    </div>
+                </div>
+
+                <!-- Expertise – full width -->
+                <div class="card-expertise anim anim-4">
+                    <div class="expertise-left">
+                        <span class="card-number" style="top: 32px; right: 40px;">03</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Our Expertise</h3>
+                        <div class="card-divider"></div>
+                        <div class="card-text">
+                            <p>Our team brings together decades of combined experience in architectural drafting,
+                                construction documentation, and CAD technology. We stay current with industry standards
+                                and continuously invest in training and technology upgrades.</p>
+                            <p>Each drafter on our team specializes in specific project types, ensuring your drawings
+                                benefit from focused expertise. Whether you need detailed shop drawings for complex
+                                stone installations or precision millwork plans, we match the right specialist to your
+                                project.</p>
+                        </div>
+                        <div class="tag-list">
+                            <span class="tag">Shop Drawings</span>
+                            <span class="tag">Millwork</span>
+                            <span class="tag">Stone & Tile</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-right">
+                        <div class="card-text" style="max-width: 380px;">
+                            <p>We work with leading CAD and 3D modeling software to deliver drawings in formats
+                                compatible with your workflow. From traditional AutoCAD to advanced BIM integration, we
+                                adapt to your technical requirements.</p>
+                        </div>
+
+                        <div class="stat-block">
+                            <div class="stat-item">
+                                <div class="stat-value">20<span style="font-size:1.4rem">+</span></div>
+                                <div class="stat-label">Years Combined</div>
                             </div>
-                            <div class="vision-mission-content">
-                                <h3>our mission</h3>
-                                <p>To serve as a trusted partner in architectural and engineering documentation by
-                                    delivering highquality, cost-effective solutions with precision turnarounds. We
-                                    believe technical documentation
-                                    should be the strongest link in the project chain—providing the definitive blueprint
-                                    for
-                                    craftsmanship and ensuring every design intent is executed with integrity, clarity,
-                                    and precision.</p>
+                            <div class="stat-item">
+                                <div class="stat-value">500<span style="font-size:1.4rem">+</span></div>
+                                <div class="stat-label">Projects Delivered</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Core Specialisms</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">100<span style="font-size:1.4rem">%</span></div>
+                                <div class="stat-label">Precision Focus</div>
                             </div>
                         </div>
-                        <!-- Vision Mission Item End -->
                     </div>
-                    <!-- Vision Mission Box End -->
                 </div>
-            </div>
+
+            </div><!-- /cards-grid -->
+
         </div>
-    </div>
-    <!-- Vision Mission End -->
+    </section>
+    <!-- mission section end -->
 
     <!-- Why Choose Us Section Start -->
     <div class="why-choose-us">
@@ -505,7 +550,7 @@
                     <div class="why-choose-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">The Ethos Standard</h2>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">The Ethos <em>Standard</em></h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -569,7 +614,7 @@
                         <div class="why-choose-img-box-1">
                             <!-- Why Choose img 1 Start -->
                             <div class="why-choose-img-1">
-                                <figure class="image-anime">
+                                <figure class="image-anime reveal">
                                     <img src="images/about-img-3.webp" alt="about-img-3">
                                 </figure>
                             </div>
@@ -577,7 +622,7 @@
 
                             <!-- Why Choose img 2 Start -->
                             <div class="why-choose-img-2">
-                                <figure class="image-anime">
+                                <figure class="image-anime reveal">
                                     <img src="images/about-img-4.webp" alt="about-img-4">
                                 </figure>
                             </div>
@@ -589,7 +634,7 @@
                         <div class="why-choose-img-box-2">
                             <!-- Why Choose img 3 Start -->
                             <div class="why-choose-img-3">
-                                <figure class="image-anime">
+                                <figure class="image-anime reveal">
                                     <img src="images/about-img-5.webp" alt="about-img-5">
                                 </figure>
                             </div>
@@ -597,7 +642,7 @@
 
                             <!-- Why Choose img 4 Start -->
                             <div class="why-choose-img-4">
-                                <figure class="image-anime">
+                                <figure class="image-anime reveal">
                                     <img src="images/about-img-6.webp" alt="about-img-6.webp">
                                 </figure>
                             </div>
@@ -740,6 +785,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap js file -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
     <!-- SlickNav js file -->
     <script src="js/jquery.slicknav.js"></script>
     <!-- Swiper js file -->
@@ -747,10 +794,17 @@
     <!-- Counter js file -->
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
+    <!-- Isotop js file -->
+    <script src="js/isotope.min.js"></script>
     <!-- Magnific js file -->
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- SmoothScroll -->
     <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
     <!-- Text Effect js file -->
     <script src="js/SplitText.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>

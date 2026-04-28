@@ -62,13 +62,12 @@
 }
 
 .hero-headline {
-  font-family: var(--display-font);
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
-  font-weight: 400;
+  font-family: var(--default-font);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
   color: var(--white-color);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  letter-spacing: -.01em;
 }
 
 .hero-headline em {
@@ -145,7 +144,7 @@
 }
 
 .pillar-text {
-  font-size: 0.78rem;
+  font-size: 16px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.42);
   line-height: 1.75;
@@ -253,6 +252,11 @@
 .section-title em {
   font-style: italic;
   color: var(--accent-color);
+  font-family: var(--default-font);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.01em;
 }
 
 .section-desc {
@@ -424,7 +428,7 @@
 }
 
 .submittal-closing p {
-  font-size: 0.82rem;
+  font-size: 16px;
   font-style: italic;
   font-family: var(--display-font);
   color: rgba(255, 255, 255, 0.7);
@@ -599,7 +603,7 @@
 }
 
 .partnership-body {
-  font-size: 0.9rem;
+  font-size: 16px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.85;

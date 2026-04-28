@@ -44,6 +44,13 @@
 	--divider-color: #EAF0EC;
 	--dark-divider-color: #FFFFFF1A;
 	--error-color: rgb(230, 87, 87);
+	--primary: #192324;
+	--secondary: #F8F8F8;
+	--text: #283132;
+	--accent: #7C877F;
+	--white: #FFFFFF;
+	--divider: #EAF0EC;
+	--dk-div: #FFFFFF1A;
 	--default-font: "Hanken Grotesk", sans-serif;
 }
 
@@ -351,6 +358,7 @@ body {
 
 .section-title .headingTag {
 	display: inline-block;
+	font-family: var(--default-font);
 	position: relative;
 	font-size: 16px;
 	font-weight: 500;
@@ -384,15 +392,55 @@ body {
 }
 
 .section-title h2 {
+	font-family: var(--default-font);
 	font-size: 46px;
 	font-weight: 700;
-	letter-spacing: -0.02em;
-	margin-bottom: 0;
-	cursor: none;
+	line-height: 1.15;
+	color: var(--text);
+	letter-spacing: -.01em;
+}
+
+
+/* ─── SECTION COMMONS ─── */
+.s-eyebrow {
+	font-size: .6rem;
+	letter-spacing: .26em;
+	text-transform: uppercase;
+	color: var(--accent);
+	display: flex;
+	align-items: center;
+	gap: .8rem;
+	margin-bottom: 1rem;
+}
+
+.s-eyebrow::before {
+	content: '';
+	width: 20px;
+	height: 1px;
+	background: var(--accent);
+	flex-shrink: 0;
+}
+
+.s-title {
+	font-family: var(--default-font);
+	font-size: 46px;
+	font-weight: 700;
+	line-height: 1.15;
+	color: var(--text);
+	letter-spacing: -.01em;
+}
+
+.s-title.light {
+	color: var(--white);
 }
 
 .section-title h1 span,
 .section-title h2 span {
+	color: var(--accent-color);
+	font-style: italic;
+}
+
+em {
 	color: var(--accent-color);
 }
 
@@ -1313,8 +1361,16 @@ header.main-header .header-sticky.active .navbar {
 /************************************/
 
 .how-we-work {
-	background: #464646;
+	background: var(--white-color);
 	padding: 100px 0;
+}
+
+.how-we-work .text-anime-style-2 {
+	color: inherit !important;
+}
+
+.how-we-work p {
+	color: var(--primary-color);
 }
 
 .how-we-work-list {
@@ -1338,12 +1394,12 @@ header.main-header .header-sticky.active .navbar {
 .how-we-work-content h3 {
 	font-size: 20px;
 	text-transform: capitalize;
-	color: var(--white-color);
+	color: var(--text-color);
 	margin-bottom: 10px;
 }
 
 .how-we-work-content p {
-	color: var(--white-color);
+	color: var(--text-color);
 	margin: 0;
 }
 
@@ -2892,6 +2948,7 @@ header.main-header .header-sticky.active .navbar {
 	outline: none;
 	box-shadow: none;
 	padding: 14px 15px;
+	font-family: var(--default-font);
 }
 
 .contact-form .form-control::placeholder {
@@ -3019,7 +3076,7 @@ header.main-header .header-sticky.active .navbar {
 	background-color: var(--primary-color);
 	color: white;
 	border: none;
-	padding: 12px 30px;
+	padding: 12px 25px;
 	border-radius: 4px;
 	transition: all 0.3s ease;
 }
@@ -3047,6 +3104,8 @@ header.main-header .header-sticky.active .navbar {
 /************************************/
 /***      27. Responsive css      ***/
 /************************************/
+
+
 
 @media only screen and (max-width: 1366px) {
 
