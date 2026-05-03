@@ -900,6 +900,11 @@ footer {
     font-size: 1.3rem;
     color: var(--white);
     font-weight: 400;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 40%;
 }
 
 .footer-logo em {

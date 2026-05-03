@@ -702,6 +702,10 @@ footer {
   transition-delay: 0.4s;
 }
 
+.millwork-page-header {
+  background-image: url(../images/banner-millwork.webp);
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   nav {

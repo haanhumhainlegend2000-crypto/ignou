@@ -1,4 +1,53 @@
+// cookies
+function cookieAction(type) {
+    const t = document.getElementById('cookieToast');
+    t.textContent = type === 'accept' ? 'Cookies accepted ✓' : 'Non-essential rejected';
+    t.style.opacity = '1';
+    setTimeout(() => {
+        t.style.opacity = '0';
+        setTimeout(() => document.getElementById('cookieBar').style.display = 'none', 400);
+    }, 1800);
+}
 
+// active menu
+const currentLocation = window.location.href;
+const menuItems = document.querySelectorAll('#menu .nav-link');
+
+menuItems.forEach(item => {
+    if (item.href === currentLocation) {
+        item.classList.add('active');
+    } else {
+        item.classList.remove('active');
+    }
+});
+
+// header scroll 
+let lastScrollTop = 0;
+
+$(window).on("scroll", function () {
+    let header = $("header.main-header");
+    let scrollTop = $(this).scrollTop();
+    let docHeight = $(document).height() - $(window).height();
+    let scrollPercent = (scrollTop / docHeight) * 100;
+
+    if (scrollPercent > 10) {
+        header.addClass("scrolled");
+
+        if (scrollTop > lastScrollTop) {
+            // scroll down → hide
+            header.addClass("hide");
+        } else {
+            // scroll up → show
+            header.removeClass("hide");
+        }
+
+    } else {
+        // 🔥 MOST IMPORTANT FIX
+        header.removeClass("scrolled hide");
+    }
+
+    lastScrollTop = scrollTop;
+});
 
 
 // Nav scroll state

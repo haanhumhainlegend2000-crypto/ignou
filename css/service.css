@@ -625,3 +625,7 @@
         padding: 28px 24px;
     }
 }
+
+.tile-shop-page-header {
+    background-image: url(../images/banner-tilework.webp);
+}
