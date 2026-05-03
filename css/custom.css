@@ -4387,4 +4387,8 @@ header.main-header .header-sticky.active .navbar {
 		margin-left: -16px;
 	}
 
+	.active {
+		color: var(--primary-color) !important;
+	}
+
 }
