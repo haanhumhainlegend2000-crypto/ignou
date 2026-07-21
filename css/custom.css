@@ -4403,4 +4403,22 @@ header.main-header .header-sticky.active .navbar {
 		color: var(--primary-color) !important;
 	}
 
+	.cookie-bar .start-div-cookies, .mission-section .cards-grid, .mission-section .card-expertise {
+		display: inherit !important;
+	}
+
+	.cookie-bar .cookie-text {
+		margin-bottom: 20px !important;
+	}
+
+	.why-choose-item-content p {
+		text-align: left;
+	}
+
+	.cookie-close {	
+		color: white;
+		font-size: 25px;		
+		cursor: pointer !important;		
+		float: right;
+	}
 }
