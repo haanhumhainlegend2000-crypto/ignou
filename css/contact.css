@@ -10,6 +10,10 @@
       padding: 2rem 1.5rem 1rem;
   }
 
+  .section-title h2 {
+    font-size: 38px;
+  }
+
   #statusModal #modalIcon {
       font-size: 50px;
       display: flex;

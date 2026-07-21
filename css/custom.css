@@ -39,6 +39,10 @@
 	color: var(--accent) !important;
 }
 
+.breadcrumb-item.active {
+    color: var(--logo-color) !important;
+}
+
 :root {
 	--primary-color: #192324;
 	--secondery-color: #F8F8F8;
@@ -1663,7 +1667,7 @@ header.main-header .header-sticky.active .navbar {
 
 .page-header-box h1 {
 	display: inline-block;
-	font-size: 80px;
+	font-size: 75px;
 	font-weight: 700;
 	color: var(--white-color);
 	letter-spacing: -0.02em;
@@ -2295,7 +2299,7 @@ header.main-header .header-sticky.active .navbar {
 
 .service-feature-image img {
 	width: 100%;
-	aspect-ratio: 1 / 0.55;
+	/* aspect-ratio: 1 / 0.55; */
 	object-fit: cover;
 }
 
@@ -3145,6 +3149,14 @@ header.main-header .header-sticky.active .navbar {
 	background-color: white;
 	padding: 0px 20px;
 	border-radius: 50px;
+}
+
+.footer-contact-content p a {
+	color: var(--logo-color);
+}
+
+.contact-info-content p a, .contact-info-content p {
+	color: var(--primary);
 }
 
 .footer-links ul li i {
@@ -4286,9 +4298,9 @@ header.main-header .header-sticky.active .navbar {
 		margin-bottom: 20px;
 	}
 
-	.service-feature-image img {
+	/* .service-feature-image img {
 		aspect-ratio: 1 / 0.7;
-	}
+	} */
 
 	.service-entry-list-image {
 		gap: 20px;
