@@ -1610,6 +1610,18 @@ header.main-header .header-sticky.active .navbar {
 .footer-copyright-text p {
 	color: var(--white-color);
 	margin: 0;
+	text-align: left;
+}
+
+.payments-logo {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: flex-start;
+}
+
+.payments-logo img {
+    width: 30%;
 }
 
 /************************************/
