@@ -154,8 +154,10 @@
                                             class="form-control" id="email" placeholder="Email Address*" required="">
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    <div class="form-group col-md-12 mb-4"> <input type="text" name="phone"
-                                            class="form-control" id="phone" placeholder="Your Phone" required="">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <input type="tel" name="phone" class="form-control" id="phone"
+                                            placeholder="Contact Number" required minlength="10" maxlength="10"
+                                            pattern="[0-9]{10}" inputmode="numeric">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group col-md-12 mb-5"> <textarea name="message"
@@ -187,7 +189,10 @@
                 <div class="col-lg-12">
                     <!-- Google Map IFrame Start -->
                     <div class="google-map-iframe">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.9990189674377!2d-75.67999282349652!3d39.66786540087633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c700d192e415bb%3A0xf59370e24a0e6982!2s254%20Chapman%20Rd%20Ste%20101%20b%2C%20Newark%2C%20DE%2019702%2C%20USA!5e1!3m2!1sen!2sin!4v1784627711789!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.9990189674377!2d-75.67999282349652!3d39.66786540087633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c700d192e415bb%3A0xf59370e24a0e6982!2s254%20Chapman%20Rd%20Ste%20101%20b%2C%20Newark%2C%20DE%2019702%2C%20USA!5e1!3m2!1sen!2sin!4v1784627711789!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                     <!-- Google Map IFrame End -->
                 </div>
@@ -282,7 +287,7 @@
                     <div class="footer-content">
                         <p>Ethos Drafting Studio was established to close the critical gap between architectural vision
                             and fabrication reality. </p>
-                    </div>                    
+                    </div>
 
                 </div>
 
@@ -294,7 +299,8 @@
                             <li><i class="fa-solid fa-angle-right"></i> <a href="index.html">Home</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="about.html">Abouts</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="contact.html">Contacts</a></li>
-                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
@@ -465,7 +471,7 @@
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // 🔥 LOADING STATE
+            // LOADING STATE
             submitBtn.disabled = true;
             submitBtn.innerHTML = `
         Sending...
@@ -479,7 +485,7 @@
                 message: document.getElementById("message").value
             };
 
-            emailjs.send("service_7pz312s", "template_0txpthm", formData)
+            emailjs.send("service_fgmxk6b", "template_0txpthm", formData)
                 .then(() => {
 
                     resetButton();
