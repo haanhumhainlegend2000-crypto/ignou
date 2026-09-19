@@ -40,25 +40,25 @@
 }
 
 .breadcrumb-item.active {
-    color: var(--logo-color) !important;
+	color: var(--logo-color) !important;
 }
 
 :root {
 	--primary-color: #192324;
-	--secondery-color: #F8F8F8;
+	--secondary-color: #f8f8f8;
 	--text-color: #283132;
-	--accent-color: #7C877F;
-	--white-color: #FFFFFF;
-	--divider-color: #EAF0EC;
-	--dark-divider-color: #FFFFFF1A;
+	--accent-color: #7c877f;
+	--white-color: #ffffff;
+	--divider-color: #eaf0ec;
+	--dark-divider-color: #ffffff1a;
 	--error-color: rgb(230, 87, 87);
 	--primary: #192324;
-	--secondary: #F8F8F8;
+	--secondary: #f8f8f8;
 	--text: #283132;
-	--accent: #7C877F;
-	--white: #FFFFFF;
-	--divider: #EAF0EC;
-	--dk-div: #FFFFFF1A;
+	--accent: #7c877f;
+	--white: #ffffff;
+	--divider: #eaf0ec;
+	--dk-div: #ffffff1a;
 	--default-font: "Hanken Grotesk", sans-serif;
 	--logo-color: #bc9d6c;
 }
@@ -1614,14 +1614,14 @@ header.main-header .header-sticky.active .navbar {
 }
 
 .payments-logo {
-    display: flex;
-    gap: 20px;
-    justify-content: end;
-    align-items: flex-start;
+	display: flex;
+	gap: 20px;
+	justify-content: end;
+	align-items: flex-start;
 }
 
 .payments-logo img {
-    width: 30%;
+	width: 30%;
 }
 
 /************************************/
@@ -2012,8 +2012,7 @@ header.main-header .header-sticky.active .navbar {
 
 .faq-accordion .accordion-item {
 	border-bottom: 1px solid var(--divider-color);
-	margin-bottom: 30px;
-	padding-bottom: 15px;
+	margin-bottom: 23px !important;
 }
 
 .faq-accordion .accordion-item:last-child {
@@ -2023,39 +2022,20 @@ header.main-header .header-sticky.active .navbar {
 }
 
 .faq-accordion .accordion-header .accordion-button {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 600;
 	line-height: 1.2em;
 	color: var(--primary-color);
-	align-items: start;
 	padding-right: 35px;
 	transition: all 0.3s ease-in-out;
 }
 
 .faq-accordion .accordion-header .accordion-button span {
-	margin-right: 7px;
+	margin-right: 9px;
 }
 
 .faq-accordion .accordion-button:not(.collapsed) {
 	padding-bottom: 15px;
-}
-
-.faq-accordion .accordion-item .accordion-button::after,
-.faq-accordion .accordion-item .accordion-button.collapsed::after {
-	content: '\2b';
-	font-family: 'Font Awesome 6 Free';
-	position: absolute;
-	font-size: 18px;
-	font-weight: 900;
-	color: var(--primary-color);
-	text-align: right;
-	top: 0;
-	right: 0;
-	transition: all 0.3s ease-in-out;
-}
-
-.faq-accordion .accordion-button:not(.collapsed)::after {
-	content: '\f068';
 }
 
 .faq-accordion .accordion-body {
@@ -3147,7 +3127,8 @@ header.main-header .header-sticky.active .navbar {
 	color: var(--logo-color);
 }
 
-.contact-info-content p a, .contact-info-content p {
+.contact-info-content p a,
+.contact-info-content p {
 	color: var(--primary);
 }
 
@@ -3256,11 +3237,349 @@ header.main-header .header-sticky.active .navbar {
 }
 
 
+/* faq css start */
+/* ───────────────────────────────────────────
+       FAQ Section Wrapper
+    ─────────────────────────────────────────── */
+.faq-section {
+	padding: 50px 0px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Decorative background elements */
+.faq-section::before {
+	content: "";
+	position: absolute;
+	top: -200px;
+	right: -150px;
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background: radial-gradient(circle,
+			var(--accent-color) 0%,
+			transparent 70%);
+	opacity: 0.06;
+	pointer-events: none;
+}
+
+.faq-section::after {
+	content: "";
+	position: absolute;
+	bottom: -100px;
+	left: -200px;
+	width: 400px;
+	height: 400px;
+	border-radius: 50%;
+	background: radial-gradient(circle,
+			var(--logo-color) 0%,
+			transparent 70%);
+	opacity: 0.04;
+	pointer-events: none;
+}
+
+/* ───────────────────────────────────────────
+       Section Header
+    ─────────────────────────────────────────── */
+.faq-header {
+	text-align: center;
+	margin-bottom: 60px;
+	position: relative;
+	z-index: 1;
+}
+
+.faq-header .section-label {
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: var(--logo-color);
+	margin-bottom: 16px;
+	position: relative;
+	padding: 0 24px;
+}
+
+.faq-header .section-label::before,
+.faq-header .section-label::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 16px;
+	height: 1px;
+	background-color: var(--logo-color);
+}
+
+.faq-header .section-label::before {
+	left: 0;
+}
+
+.faq-header .section-label::after {
+	right: 0;
+}
+
+.faq-header h1 {
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-bottom: 16px;
+	line-height: 1.2;
+}
+
+.faq-header p {
+	font-size: 1.1rem;
+	color: var(--accent-color);
+	max-width: 580px;
+	margin: 0 auto;
+	font-weight: 400;
+}
+
+/* ───────────────────────────────────────────
+       Accordion Custom Styles
+    ─────────────────────────────────────────── */
+.faq-accordion {
+	position: relative;
+	z-index: 1;
+	gap: 16px;
+	/* Bootstrap 5 accordion gap utility */
+	margin-top: 40px;
+}
+
+.faq-accordion .accordion-item {
+	border: none;
+	background-color: var(--white-color);
+	border-radius: 16px;
+	margin-bottom: 0;
+	box-shadow:
+		0 2px 8px rgba(25, 35, 36, 0.04),
+		0 1px 3px rgba(25, 35, 36, 0.06);
+	overflow: hidden;
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq-accordion .accordion-item:hover {
+	box-shadow:
+		0 8px 24px rgba(25, 35, 36, 0.08),
+		0 2px 8px rgba(25, 35, 36, 0.06);
+	transform: translateY(-2px);
+}
+
+.faq-accordion .accordion-item:last-child {
+	margin-bottom: 0;
+}
+
+/* ── Accordion Button (Question) ── */
+.faq-accordion .accordion-button {
+	font-family: var(--default-font);
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var(--primary-color);
+	background-color: transparent;
+	padding: 24px 32px;
+	border: none;
+	box-shadow: none !important;
+	position: relative;
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* ── CHEVRON ICON (fixed — border-based, no font dependency) ── */
+.faq-accordion .accordion-button::after {
+	flex-shrink: 0;
+	width: .5rem;
+	height: .5rem;
+	background-image: none;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	transform-origin: center;
+	transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+	border-right: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--accent-color);
+	transform: rotate(-45deg);
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+	transform: rotate(45deg);
+	border-color: var(--logo-color);
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+	background-color: transparent;
+	color: var(--primary-color);
+}
+
+/* ── Accordion Body (Answer) ── */
+.faq-accordion .accordion-body {
+	padding: 15px 30px;
+	font-size: 0.95rem;
+	color: var(--text-color);
+	line-height: 1.8;
+	border-top: 1px solid var(--divider-color);
+}
+
+.faq-accordion .accordion-body p {
+	margin-bottom: 0;
+}
+
+/* ── Number Badge on Question ── */
+.faq-accordion .accordion-button .q-number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 29px;
+	height: 32px;
+	min-width: 32px;
+	border-radius: 10px;
+	background-color: var(--secondary-color);
+	color: var(--accent-color);
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-right: 16px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) .q-number {
+	background-color: var(--primary-color);
+	color: var(--white-color);
+}
+
+/* ───────────────────────────────────────────
+       CTA / Bottom Section
+    ─────────────────────────────────────────── */
+.faq-cta {
+	text-align: center;
+	margin-top: 60px;
+	padding: 48px;
+	background-color: var(--primary-color);
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.faq-cta::before {
+	content: "";
+	position: absolute;
+	top: -50%;
+	right: -30%;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	background: var(--logo-color);
+	opacity: 0.08;
+}
+
+.faq-cta h3 {
+	font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+	font-weight: 700;
+	color: var(--white-color);
+	margin-bottom: 12px;
+}
+
+.faq-cta p {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1rem;
+	margin-bottom: 28px;
+}
+
+.faq-cta .btn-get-quote {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 14px 36px;
+	background-color: var(--logo-color);
+	color: var(--primary-color);
+	font-family: var(--default-font);
+	font-weight: 600;
+	font-size: 0.95rem;
+	border: none;
+	border-radius: 12px;
+	text-decoration: none;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-cta .btn-get-quote:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(188, 157, 108, 0.3);
+	color: var(--primary-color);
+}
+
+.faq-cta .btn-get-quote svg {
+	width: 18px;
+	height: 18px;
+	transition: transform 0.3s ease;
+}
+
+.faq-cta .btn-get-quote:hover svg {
+	transform: translateX(4px);
+}
+
+/* ───────────────────────────────────────────
+       Responsive Breakpoints
+    ─────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+	.faq-section {
+		padding: 70px 0 80px;
+	}
+
+	.faq-header {
+		margin-bottom: 40px;
+	}
+
+	.faq-accordion .accordion-button {
+		padding: 20px 24px;
+		font-size: 1rem;
+	}
+
+	.faq-accordion .accordion-body {
+		padding: 0 24px 24px;
+		font-size: 0.93rem;
+	}
+
+	.faq-cta {
+		margin-top: 48px;
+		padding: 36px 28px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.faq-section {
+		padding: 50px 0 60px;
+	}
+
+	.faq-header h1 {
+		font-size: 1.8rem;
+	}
+
+	.faq-accordion .accordion-button {
+		padding: 18px 20px;
+		font-size: 0.95rem;
+	}
+
+	.faq-accordion .accordion-button .q-number {
+		width: 28px;
+		height: 28px;
+		min-width: 28px;
+		font-size: 0.7rem;
+		margin-right: 12px;
+	}
+
+	.faq-accordion .accordion-body {
+		padding: 0 20px 20px;
+		font-size: 0.9rem;
+	}
+
+	.faq-cta {
+		padding: 30px 20px;
+		border-radius: 0;
+	}
+}
+
+/* faq css end */
+
 /************************************/
 /***      27. Responsive css      ***/
 /************************************/
-
-
 
 @media only screen and (max-width: 1366px) {
 
@@ -4257,7 +4576,7 @@ header.main-header .header-sticky.active .navbar {
 	}
 
 	.faq-accordion .accordion-header .accordion-button {
-		font-size: 18px;
+		font-size: 14px;
 		padding-right: 30px;
 	}
 
@@ -4366,7 +4685,7 @@ header.main-header .header-sticky.active .navbar {
 	}
 
 	.section-title .headingTag {
-		color: white;
+		color: var(--accent-color);
 	}
 
 	.contact-info-item {
@@ -4395,7 +4714,9 @@ header.main-header .header-sticky.active .navbar {
 		color: var(--primary-color) !important;
 	}
 
-	.cookie-bar .start-div-cookies, .mission-section .cards-grid, .mission-section .card-expertise {
+	.cookie-bar .start-div-cookies,
+	.mission-section .cards-grid,
+	.mission-section .card-expertise {
 		display: inherit !important;
 	}
 
@@ -4407,10 +4728,10 @@ header.main-header .header-sticky.active .navbar {
 		text-align: left;
 	}
 
-	.cookie-close {	
+	.cookie-close {
 		color: white;
-		font-size: 25px;		
-		cursor: pointer !important;		
+		font-size: 25px;
+		cursor: pointer !important;
 		float: right;
 	}
 
