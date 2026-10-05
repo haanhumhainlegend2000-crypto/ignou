@@ -1,0 +1,138 @@
+/* ── Accordion Body Content Spacing ─────────────────────── */
+.faq-accordion .accordion-body {
+    padding: 1.5rem 1.25rem 1.75rem;
+    line-height: 1.8;
+    font-size: 0.97rem;
+    color: #34495e;
+}
+
+.faq-accordion .accordion-body p {
+    margin-bottom: 1rem;
+}
+
+.faq-accordion .accordion-body h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.faq-accordion .accordion-body h4 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* ── Lists ─────────────────────────────────────────────── */
+.faq-accordion .accordion-body ul {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.faq-accordion .accordion-body ul li {
+    margin-bottom: 0.6rem;
+    line-height: 1.75;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.faq-accordion .accordion-body ul li::marker {
+    color: #1a6b4a;
+    font-weight: 700;
+}
+
+.faq-accordion .accordion-body ul li strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* ── Service Links Inside FAQ ──────────────────────────── */
+.faq-accordion .accordion-body a.service-link {
+    color: #1a6b4a;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.faq-accordion .accordion-body a.service-link:hover {
+    color: #135a3c;
+    border-bottom-color: #1a6b4a;
+}
+
+/* ── Table Styling ─────────────────────────────────────── */
+.faq-accordion .accordion-body table {
+    width: 100%;
+    margin: 1.25rem 0;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.faq-accordion .accordion-body table thead th {
+    background: #1a6b4a;
+    color: #ffffff;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+.faq-accordion .accordion-body table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+}
+
+.faq-accordion .accordion-body table tbody tr:nth-child(even) {
+    background: #f8faf9;
+}
+
+.faq-accordion .accordion-body table tbody tr:hover {
+    background: #edf7f2;
+}
+
+/* ── Blockquote / Example Box ──────────────────────────── */
+.faq-accordion .accordion-body blockquote {
+    margin: 1.25rem 0;
+    padding: 1rem 1.25rem;
+    background: #f0faf6;
+    border-left: 4px solid #1a6b4a;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #2c3e50;
+}
+
+/* ── Inline Tags (small labels) ────────────────────────── */
+.faq-accordion .accordion-body .tag {
+    display: inline-block;
+    background: #e8f5ee;
+    color: #1a6b4a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin: 0.15rem 0.25rem;
+}
+
+/* ── Responsive Tweaks ─────────────────────────────────── */
+@media (max-width: 768px) {
+    .faq-accordion .accordion-body {
+        padding: 1rem 1rem 1.25rem;
+        font-size: 0.93rem;
+    }
+
+    .faq-accordion .accordion-body table {
+        font-size: 0.85rem;
+    }
+
+    .faq-accordion .accordion-body table thead th,
+    .faq-accordion .accordion-body table tbody td {
+        padding: 0.6rem 0.7rem;
+    }
+}

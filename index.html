@@ -39,18 +39,81 @@
     <link rel="stylesheet" href="css/mousecursor.css">
     <!-- home css -->
     <link rel="stylesheet" href="css/home.css">
-
+    <!-- faq css -->
+    <link rel="stylesheet" href="css/faq.css">
+    <!-- schema start -->
     <script type="application/ld+json">
     {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ethos Drafting Studio",
-    "url": "https://ethosdraftingstudio.com",
-    "telephone": "+16509125160",
-    "description": "High-precision technical drafting and CAD documentation for architecture firms.",
-    "serviceType": ["Architectural Drafting", "Shop Drawings", "3D Rendering", "CAD Conversion"]
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ethos Drafting Studio",
+        "description": "Precision shop drawings, millwork detailing, tile & stone documentation, and architectural 3D rendering services for architecture firms and contractors. Based in Newark, Delaware.",
+        "url": "https://ethosdraftingstudio.com/",
+        "telephone": "+1-650-912-5160",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "254 Chapman Rd, Suite 101-B, Office 263",
+        "addressLocality": "Newark",
+        "addressRegion": "DE",
+        "postalCode": "19702",
+        "addressCountry": "US"
+        },
+        "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.6837",
+        "longitude": "-75.7497"
+        },
+        "areaServed": [
+        {"@type": "City", "name": "Newark"},
+        {"@type": "State", "name": "Delaware"},
+        {"@type": "Country", "name": "United States"}
+        ],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+        }
     }
     </script>
+
+    <!-- FAQPage (triggers rich Q&A in SERPs) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {"@type":"Question","name":"What is a shop drawing, and how is it different from a construction document?","acceptedAnswer":{"@type":"Answer","text":"A shop drawing is a fabrication-level drawing produced by or for the contractor, fabricator, or installer — it shows exact dimensions, materials, hardware, and assembly details needed to actually build or install something like millwork, casework, or tile and stone work. Construction documents, by contrast, are the architect's design-intent drawings used for permitting and bidding."}},
+        {"@type":"Question","name":"What should a millwork shop drawing include?","acceptedAnswer":{"@type":"Answer","text":"A comprehensive millwork shop drawing package includes plans, elevations, sections; detailed dimensions and clearances; cabinet and casework construction details; joinery and fabrication details; materials and substrate specifications; veneer and finish information; door, drawer, and hardware schedules; profiles, reveals, and architectural details; countertops and integrated components; anchoring and installation details; MEP coordination; panel identification; tolerances; and revision control."}},
+        {"@type":"Question","name":"What is an architectural shop drawing checklist?","acceptedAnswer":{"@type":"Answer","text":"Before submission, a shop drawing package should be checked for dimensional accuracy, coordination, constructability, material information, and compliance with project documents. This includes verifying design document coordination, dimensions and field conditions, plans/elevations/sections, material and finish schedules, assembly details, hardware coordination, interface and trade coordination, installation requirements, code compliance, document control, and a final quality control review."}},
+        {"@type":"Question","name":"How much do millwork shop drawings cost?","acceptedAnswer":{"@type":"Answer","text":"As a general budgeting guideline, millwork shop drawing services may be estimated at approximately 5% of the total millwork contract value. This is a rule of thumb rather than a fixed industry rate. The actual drafting fee varies depending on project complexity, fabrication requirements, drawing volume, coordination needs, and turnaround time."}},
+        {"@type":"Question","name":"AutoCAD vs. Revit for shop drawings — which should you use?","acceptedAnswer":{"@type":"Answer","text":"AutoCAD remains highly effective for detailed 2D shop drawing production, particularly for fabrication-intensive scopes where precise linework, dimensions, sections, profiles, and construction details are required. Revit uses a BIM-based model-driven workflow suitable for projects where documentation must stay coordinated with a 3D building model. The choice should be based on the project's technical requirements rather than software preference alone."}},
+        {"@type":"Question","name":"What is white-label drafting?","acceptedAnswer":{"@type":"Answer","text":"White-label drafting is a professional service where a specialized drafting company prepares drawings and technical documentation on behalf of another architecture, design, construction, millwork, or fabrication company, while the client-facing company retains the relationship and presents deliverables under its own brand. It allows firms to increase drafting capacity without expanding in-house staff."}},
+        {"@type":"Question","name":"What are shop drawings for hospitality projects?","acceptedAnswer":{"@type":"Answer","text":"Hospitality shop drawings include millwork and casework drawings (reception desks, bars, vanities, wardrobes), architectural details (enlarged plans, elevations, sections), tile and stone shop drawings, custom furniture detailing, countertop and stone detailing, coordination drawings for interfaces between trades, and as-built documentation reflecting final installed conditions."}},
+        {"@type":"Question","name":"Why are shop drawings important for retail fit-outs?","acceptedAnswer":{"@type":"Answer","text":"Retail environments often involve tight spaces, repetitive fixtures, customized displays, premium finishes, and multiple trades working within the same area. Accurate shop drawings allow fabrication and installation requirements to be reviewed before production begins, reducing errors, material waste, and avoidable site modifications."}},
+        {"@type":"Question","name":"What standards are used for tile and stone shop drawings?","acceptedAnswer":{"@type":"Answer","text":"Tile and stone shop drawings reference TCNA Handbook, ANSI A108/A118/A136.1 Series, ANSI A137 Series, Natural Stone Institute DSDM, ASTM material standards, project specifications, and manufacturer instructions. Effective shop drawings translate design intent, material requirements, fabrication logic, and installation conditions into a coordinated technical package."}},
+        {"@type":"Question","name":"What should a terrazzo shop drawing include?","acceptedAnswer":{"@type":"Answer","text":"A professional terrazzo shop drawing includes floor plans, enlarged layouts, elevations, sections, setting-out dimensions, terrazzo patterns, color and material references, divider strips, expansion and control-joint locations, transitions, stair treads and risers, edge conditions, floor-level changes, attachment details, decorative borders, logos, geometric patterns, inlays, and aggregate/color zones."}},
+        {"@type":"Question","name":"What standards are used for terrazzo shop drawings?","acceptedAnswer":{"@type":"Answer","text":"For U.S. projects, terrazzo shop drawings reference the National Terrazzo & Mosaic Association (NTMA) technical specifications and guide details, together with the project's construction specifications, selected terrazzo system, manufacturer requirements, and applicable codes."}}
+        ]
+    }
+    </script>
+
+    <!-- WebPage + Breadcrumb for homepage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Ethos Drafting Studio | Shop Drawings, Millwork & 3D Rendering | Newark, DE",
+        "description": "Precision shop drawings, millwork detailing, tile & stone documentation, and architectural 3D rendering for firms across Delaware. Based in Newark, DE 19702.",
+        "url": "https://ethosdraftingstudio.com/index.html",
+        "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://ethosdraftingstudio.com/index.html"}]
+        }
+    }
+    </script>
+    <!-- schema end -->
 </head>
 
 <body>
@@ -803,23 +866,22 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
                                 <span class="q-number">01</span>
-                                What is a shop drawing, and how is it different from a
-                                construction document?
+                                What is a shop drawing, and how is it different from a construction document?
                             </button>
                         </h2>
                         <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    A shop drawing is a fabrication-level drawing produced by (or for)
-                                    the contractor, fabricator, or installer — it shows exact
-                                    dimensions, materials, hardware, and assembly details needed to
-                                    actually build or install something like millwork, casework, or
-                                    tile and stone work. Construction documents, by contrast, are the
-                                    architect's design-intent drawings used for permitting and bidding.
-                                    Shop drawings translate that design intent into build-ready
-                                    instructions for the shop floor and job site, which is where our
-                                    "shop-floor logic" approach comes in.
-                                </p>
+                                <p>A shop drawing is a fabrication-level drawing produced by (or for) the contractor,
+                                    fabricator, or installer — it shows exact dimensions, materials, hardware, and
+                                    assembly details needed to actually build or install something like millwork,
+                                    casework, or tile and stone work. Construction documents, by contrast, are the
+                                    architect's design-intent drawings used for permitting and bidding.</p>
+                                <p>Shop drawings translate that design intent into build-ready instructions for the shop
+                                    floor and job site, which is where our "shop-floor logic" approach comes in.</p>
+                                <p><a href="https://ethosdraftingstudio.com/millwork-drawings-service.html"
+                                        class="service-link">Millwork Shop Drawings →</a> &nbsp;|&nbsp; <a
+                                        href="https://ethosdraftingstudio.com/tile-stone-service.html"
+                                        class="service-link">Tile &amp; Stone Shop Drawings →</a></p>
                             </div>
                         </div>
                     </div>
@@ -835,15 +897,14 @@
                         </h2>
                         <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Pricing depends on project scope, complexity, level of detail
-                                    required, and turnaround timeline — a single-room millwork package
-                                    costs less than a full commercial casework submittal or a multi-view
-                                    photorealistic rendering package. Rather than publish flat rates
-                                    that don't reflect real project variables, we provide a scoped
-                                    quote after reviewing your drawings or reference materials, usually
-                                    within 24–48 hours of receiving them.
-                                </p>
+                                <p>Pricing depends on project scope, complexity, level of detail required, and
+                                    turnaround timeline — a single-room millwork package costs less than a full
+                                    commercial casework submittal or a multi-view photorealistic rendering package.
+                                    Rather than publish flat rates that don't reflect real project variables, we provide
+                                    a scoped quote after reviewing your drawings or reference materials, usually within
+                                    24–48 hours of receiving them.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Request a
+                                        Quote →</a></p>
                             </div>
                         </div>
                     </div>
@@ -854,21 +915,18 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
                                 <span class="q-number">03</span>
-                                How long does it take to get millwork or tile &amp; stone shop
-                                drawings completed?
+                                How long does it take to get millwork or tile &amp; stone shop drawings completed?
                             </button>
                         </h2>
                         <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Turnaround depends on scope: smaller shop drawing packages can be
-                                    completed in a few days, while larger or multi-discipline
-                                    documentation sets (spanning millwork, tile, and coordination with
-                                    structural/mechanical trades) typically take one to a few weeks.
-                                    We confirm a firm timeline with you during the initial project
-                                    review phase, before drafting begins, so there are no surprises
-                                    mid-project.
-                                </p>
+                                <p>Turnaround depends on scope: smaller shop drawing packages can be completed in a few
+                                    days, while larger or multi-discipline documentation sets (spanning millwork, tile,
+                                    and coordination with structural/mechanical trades) typically take one to a few
+                                    weeks. We confirm a firm timeline with you during the initial project review phase,
+                                    before drafting begins, so there are no surprises mid-project.</p>
+                                <p><a href="https://ethosdraftingstudio.com/millwork-drawings-service.html"
+                                        class="service-link">Explore Millwork Shop Drawing Services →</a></p>
                             </div>
                         </div>
                     </div>
@@ -884,13 +942,12 @@
                         </h2>
                         <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    We work in AutoCAD, Revit, and 3ds Max, and support both
-                                    Paper-to-CAD and Image-to-CAD conversion. We deliberately favor
-                                    careful manual drafting over automated shortcuts, because it
-                                    produces more reliable, cleaner files for long-term use and
-                                    revisions.
-                                </p>
+                                <p>We work in AutoCAD, Revit, and 3ds Max, and support both Paper-to-CAD and
+                                    Image-to-CAD conversion. We deliberately favor careful manual drafting over
+                                    automated shortcuts, because it produces more reliable, cleaner files for long-term
+                                    use and revisions.</p>
+                                <p><a href="https://ethosdraftingstudio.com/architecture-design.html"
+                                        class="service-link">3D Rendering Services →</a></p>
                             </div>
                         </div>
                     </div>
@@ -901,20 +958,18 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
                                 <span class="q-number">05</span>
-                                Do you offer white-label drafting services for architecture and
-                                design firms?
+                                Do you offer white-label drafting services for architecture and design firms?
                             </button>
                         </h2>
                         <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. We work as an extension of your team — your branding, title
-                                    blocks, and client relationships stay fully intact, and we operate
-                                    invisibly in the background. This is a core part of how we work
-                                    with architecture firms, interior designers, and millwork/casework
-                                    shops that need extra drafting capacity without exposing a third
-                                    party to their clients.
-                                </p>
+                                <p>Yes. We work as an extension of your team — your branding, title blocks, and client
+                                    relationships stay fully intact, and we operate invisibly in the background. This is
+                                    a core part of how we work with architecture firms, interior designers, and
+                                    millwork/casework shops that need extra drafting capacity without exposing a third
+                                    party to their clients.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Discuss
+                                        White-Label Partnership →</a></p>
                             </div>
                         </div>
                     </div>
@@ -930,15 +985,14 @@
                         </h2>
                         <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Every deliverable goes through a structured four-phase workflow:
-                                    (1) Project Review &amp; Scope Alignment to confirm requirements
-                                    upfront, (2) Technical Development with continuous cross-discipline
-                                    coordination against structural, mechanical, and architectural
-                                    requirements, (3) an Internal Quality Control Review before
-                                    anything is submitted, and (4) Final Delivery with ongoing revision
-                                    support for field conditions and coordination changes.
-                                </p>
+                                <p>Every deliverable goes through a structured four-phase workflow: (1) Project Review
+                                    &amp; Scope Alignment to confirm requirements upfront, (2) Technical Development
+                                    with continuous cross-discipline coordination against structural, mechanical, and
+                                    architectural requirements, (3) an Internal Quality Control Review before anything
+                                    is submitted, and (4) Final Delivery with ongoing revision support for field
+                                    conditions and coordination changes.</p>
+                                <p><a href="https://ethosdraftingstudio.com/millwork-drawings-service.html"
+                                        class="service-link">Millwork Shop Drawings →</a></p>
                             </div>
                         </div>
                     </div>
@@ -954,12 +1008,12 @@
                         </h2>
                         <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. Structured revision support is included after final delivery
-                                    to accommodate field conditions, RFIs, and coordination updates.
-                                    We'll clarify the scope of included revisions with you at project
-                                    kickoff so expectations are clear on both sides.
-                                </p>
+                                <p>Yes. Structured revision support is included after final delivery to accommodate
+                                    field conditions, RFIs, and coordination updates. We'll clarify the scope of
+                                    included revisions with you at project kickoff so expectations are clear on both
+                                    sides.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Get a
+                                        Quote →</a></p>
                             </div>
                         </div>
                     </div>
@@ -975,12 +1029,10 @@
                         </h2>
                         <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. We operate under NDA, use secure file-sharing systems, and
-                                    treat all client files, drawings, and project information with
-                                    strict confidentiality. This applies whether you're a firm sending
-                                    us overflow work or a fabricator sending us proprietary details.
-                                </p>
+                                <p>Yes. We operate under NDA, use secure file-sharing systems, and treat all client
+                                    files, drawings, and project information with strict confidentiality. This applies
+                                    whether you're a firm sending us overflow work or a fabricator sending us
+                                    proprietary details.</p>
                             </div>
                         </div>
                     </div>
@@ -996,15 +1048,14 @@
                         </h2>
                         <div id="faqNine" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    We've produced shop drawings, drafting, and rendering for
-                                    hospitality (hotels, resorts, F&amp;B interiors), commercial
-                                    offices, retail and branded fit-outs, healthcare facilities,
-                                    institutional projects (libraries, civic buildings, universities),
-                                    and restaurants and food service. If your project involves
-                                    millwork, casework, tile, stone, or custom furniture detailing,
-                                    it's likely within our scope.
+                                <p>We've produced shop drawings, drafting, and rendering for hospitality (hotels,
+                                    resorts, F&amp;B interiors), commercial offices, retail and branded fit-outs,
+                                    healthcare facilities, institutional projects (libraries, civic buildings,
+                                    universities), and restaurants and food service. If your project involves millwork,
+                                    casework, tile, stone, or custom furniture detailing, it's likely within our scope.
                                 </p>
+                                <p><a href="https://ethosdraftingstudio.com/tile-stone-service.html"
+                                        class="service-link">Tile &amp; Stone Shop Drawings →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1015,18 +1066,16 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faqTen" aria-expanded="false" aria-controls="faqTen">
                                 <span class="q-number">10</span>
-                                Are your millwork and tile &amp; stone drawings aligned with
-                                industry standards?
+                                Are your millwork and tile &amp; stone drawings aligned with industry standards?
                             </button>
                         </h2>
                         <div id="faqTen" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. Millwork and casework shop drawings are developed with AWI/AWMAC
-                                    awareness, and tile and stone layouts follow TCNA-aligned standards
-                                    for take-offs and installation mapping — so drawings hold up to
-                                    industry review, not just visual approval.
-                                </p>
+                                <p>Yes. Millwork and casework shop drawings are developed with AWI/AWMAC awareness, and
+                                    tile and stone layouts follow TCNA-aligned standards for take-offs and installation
+                                    mapping — so drawings hold up to industry review, not just visual approval.</p>
+                                <p><a href="https://ethosdraftingstudio.com/tile-stone-service.html"
+                                        class="service-link">Tile &amp; Stone Shop Drawings →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1037,18 +1086,17 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faqEleven" aria-expanded="false" aria-controls="faqEleven">
                                 <span class="q-number">11</span>
-                                Do you work with clients outside your local area, including
-                                internationally?
+                                Do you work with clients outside your local area, including internationally?
                             </button>
                         </h2>
                         <div id="faqEleven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. Our workflow is built around remote collaboration — file
-                                    sharing, review calls, and revision cycles all happen digitally,
-                                    so location isn't a barrier. We currently support clients across
-                                    sectors and regions, with delivery in your required file formats.
-                                </p>
+                                <p>Yes. Our workflow is built around remote collaboration — file sharing, review calls,
+                                    and revision cycles all happen digitally, so location isn't a barrier. We currently
+                                    support clients across sectors and regions, with delivery in your required file
+                                    formats.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Contact
+                                        Us →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1064,12 +1112,12 @@
                         </h2>
                         <div id="faqTwelve" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    We deliver in the formats your project requires — typically DWG
-                                    and PDF for CAD drawings, RVT for Revit-based work, and high-resolution
-                                    JPEG/PNG (or layered files on request) for 3D renderings. Let us
-                                    know your preferred format during scoping and we'll match it.
-                                </p>
+                                <p>We deliver in the formats your project requires — typically DWG and PDF for CAD
+                                    drawings, RVT for Revit-based work, and high-resolution JPEG/PNG (or layered files
+                                    on request) for 3D renderings. Let us know your preferred format during scoping and
+                                    we'll match it.</p>
+                                <p><a href="https://ethosdraftingstudio.com/architecture-design.html"
+                                        class="service-link">3D Rendering Services →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1085,12 +1133,11 @@
                         </h2>
                         <div id="faqThirteen" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Send us your project scope, reference drawings, or existing
-                                    documentation. We'll review it, confirm requirements, and provide
-                                    a scoped timeline and quote — typically within 24–48 hours —
-                                    before any drafting begins.
-                                </p>
+                                <p>Send us your project scope, reference drawings, or existing documentation. We'll
+                                    review it, confirm requirements, and provide a scoped timeline and quote — typically
+                                    within 24–48 hours — before any drafting begins.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Get in
+                                        Touch →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1106,11 +1153,11 @@
                         </h2>
                         <div id="faqFourteen" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                <p>
-                                    Yes. We provide 24-hour technical support alongside structured
-                                    revision support, so you're covered for questions or adjustments
-                                    that come up during permitting, fabrication, or installation.
-                                </p>
+                                <p>Yes. We provide 24-hour technical support alongside structured revision support, so
+                                    you're covered for questions or adjustments that come up during permitting,
+                                    fabrication, or installation.</p>
+                                <p><a href="https://ethosdraftingstudio.com/contact.html" class="service-link">Contact
+                                        Us →</a></p>
                             </div>
                         </div>
                     </div>
@@ -1345,8 +1392,8 @@
                             <li><i class="fa-solid fa-angle-right"></i> <a href="index.html">Home</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="about.html">Abouts</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="contact.html">Contacts</a></li>
-                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a>
-                            </li>
+                            <li><i class="fa-solid fa-angle-right"></i> <a href="faq.html">Faq's</a></li>
+                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
