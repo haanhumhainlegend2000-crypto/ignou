@@ -1552,7 +1552,7 @@ header.main-header .header-sticky.active .navbar {
 
 .footer-contact-item .icon-box i {
 	font-size: 16px;
-	color: var(--white-color);
+	color: var(--logo-color);
 }
 
 .footer-contact-content {
@@ -3150,7 +3150,7 @@ header.main-header .header-sticky.active .navbar {
 	position: relative;
 	border: 1px solid var(--logo-color);
 	padding-bottom: 1px;
-	color: white;
+	color: var(--logo-color);
 	padding-left: 2px;
 }
 
@@ -3519,6 +3519,43 @@ header.main-header .header-sticky.active .navbar {
 
 .faq-cta .btn-get-quote:hover svg {
 	transform: translateX(4px);
+}
+
+/* ─── FOOTER ─── */
+footer {
+    background: #111a1b;
+    padding: 3rem 0;
+    border-top: 1px solid var(--dk-div);
+}
+
+.footer-logo {
+    font-family: var(--default-font);
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 40%;
+}
+
+.footer-logo em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.footer-tagline {
+    font-size: .62rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .2);
+    margin-top: .3rem;
+}
+
+.footer-copy {
+    font-size: .72rem;
+    color: rgba(255, 255, 255, .18);
 }
 
 /* ───────────────────────────────────────────

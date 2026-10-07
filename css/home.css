@@ -888,43 +888,6 @@
     color: var(--white);
 }
 
-/* ─── FOOTER ─── */
-footer {
-    background: #111a1b;
-    padding: 3rem 0;
-    border-top: 1px solid var(--dk-div);
-}
-
-.footer-logo {
-    font-family: var(--default-font);
-    font-size: 1.3rem;
-    color: var(--white);
-    font-weight: 400;
-    text-align: center;
-}
-
-.footer-logo img {
-    width: 40%;
-}
-
-.footer-logo em {
-    color: var(--accent);
-    font-style: italic;
-}
-
-.footer-tagline {
-    font-size: .62rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, .2);
-    margin-top: .3rem;
-}
-
-.footer-copy {
-    font-size: .72rem;
-    color: rgba(255, 255, 255, .18);
-}
-
 /* ─── SCROLL REVEAL ─── */
 .reveal {
     opacity: 0;
