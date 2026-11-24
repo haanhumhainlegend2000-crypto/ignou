@@ -170,15 +170,17 @@
                         <!-- Contact Form Start -->
                         <div class="contact-form">
                             <!-- Contact Form Start -->
-                            <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp"
-                                data-wow-delay="0.4s">
+                            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                                data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="row">
-                                    <div class="form-group col-md-6 mb-4"> <input type="text" name="name"
-                                            class="form-control" id="name" placeholder="Name*" required="">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <input type="text" name="name" class="form-control" id="name"
+                                            placeholder="Name*" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    <div class="form-group col-md-6 mb-4"> <input type="email" name="email"
-                                            class="form-control" id="email" placeholder="Email Address*" required="">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="Email Address*" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group col-md-12 mb-4">
@@ -187,12 +189,19 @@
                                             pattern="[0-9]{10}" inputmode="numeric">
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    <div class="form-group col-md-12 mb-5"> <textarea name="message"
-                                            class="form-control" id="message" rows="4"
+                                    <div class="form-group col-md-12 mb-5">
+                                        <textarea name="message" class="form-control" id="message" rows="4"
                                             placeholder="Your Message"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    <div class="col-md-12"> <button type="submit" class="btn-default">submit</button>
+
+                                    <!-- 1. Yahan hCaptcha Widget Add Karein -->
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="h-captcha" data-captcha="true"></div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn-default">submit</button>
                                         <div id="msgSubmit" class="h3 hidden"></div>
                                     </div>
                                 </div>
@@ -264,22 +273,30 @@
                         </div>
                         <!-- Conatct Info Item End -->
 
-                        <!-- Conatct Info Item Start -->
+                        <!-- Contact Info Item Start -->
                         <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
-                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Head Office - India</h3>
+                                <p>Office no. 1026, Westend Mall, Tenth Floor, Main Najafgarh Road, District Centre,
+                                    Janakpuri, New Delhi - 110058</p>
+                            </div>
+                        </div>
+                        <!-- Contact Info Item End -->
+
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp" data-wow-delay="0.6s">
                             <div class="icon-box">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <!-- Icon Box End -->
-
-                            <!-- Contact Info Content Start -->
                             <div class="contact-info-content">
-                                <h3>Ethos Drafting Studio</h3>
+                                <h3>US Office</h3>
                                 <p>Office 263, 254 Chapman Rd, Suite 101-B, Newark, DE 19702, United States</p>
                             </div>
-                            <!-- Contact Info Content End -->
                         </div>
-                        <!-- Conatct Info Item End -->
+                        <!-- Contact Info Item End -->
                     </div>
                     <!-- Contact Info Box End -->
                 </div>
@@ -339,7 +356,8 @@
                             <li><i class="fa-solid fa-angle-right"></i> <a href="about.html">Abouts</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="contact.html">Contacts</a></li>
                             <li><i class="fa-solid fa-angle-right"></i> <a href="faq.html">Faq's</a></li>
-                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><i class="fa-solid fa-angle-right"></i> <a href="privacy-policy.html">Privacy Policy</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Footer Links End -->
@@ -390,15 +408,30 @@
                         <!-- Footer Contact Item Start -->
                         <div class="footer-contact-item">
                             <div class="icon-box">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="footer-contact-content">
+                                <p><strong class="office-label">Head Office:</strong>
+                                    Office no. 1026, Westend Mall, Tenth Floor, Main Najafgarh Road,
+                                    District Centre, Janakpuri, New Delhi - 110058, India
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Footer Contact Item End -->
+
+                        <!-- Footer Contact Item Start -->
+                        <div class="footer-contact-item">
+                            <div class="icon-box">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div class="footer-contact-content">
-                                <p>
+                                <p><strong class="office-label">US Office:</strong>
                                     Office 263, 254 Chapman Rd, Suite 101-B,
                                     Newark, DE 19702, United States
                                 </p>
                             </div>
                         </div>
+                        <!-- Footer Contact Item End -->
                         <!-- Footer Contact Item End -->
                     </div>
                     <!-- Footer Contact Box End -->
@@ -458,8 +491,6 @@
         </div>
     </div>
 
-    <!-- email js -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- custom.js -->
@@ -495,60 +526,78 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-
+    <!-- web3forms -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
     <script>
-            (function () {
-                emailjs.init("KLNoewXBL_m2fCEVJ");
-            })();
-
         const form = document.getElementById("contactForm");
         const submitBtn = document.querySelector("#contactForm button[type='submit']");
-
-        // Create loader inside button (NO HTML CHANGE REQUIRED)
         const originalBtnText = submitBtn.innerHTML;
 
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", async function (e) {
             e.preventDefault();
 
-            // LOADING STATE
+            // 1. Check karein ki hCaptcha tick kiya hai ya nahi
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]')?.value;
+            if (!hCaptcha) {
+                showModal(
+                    "✖ Captcha Required!",
+                    "Please verify that you are human before submitting.",
+                    "error"
+                );
+                return;
+            }
+
+            // 2. LOADING STATE (Same Bootstrap Spinner)
             submitBtn.disabled = true;
             submitBtn.innerHTML = `
-        Sending...
-        <span class="spinner-border spinner-border-sm ms-2" role="status"></span>
-    `;
+            Sending...
+            <span class="spinner-border spinner-border-sm ms-2" role="status"></span>
+        `;
 
-            const formData = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                phone: document.getElementById("phone").value,
-                message: document.getElementById("message").value
-            };
+            // 3. Web3Forms Data Taiyar Karein
+            const formData = new FormData(form);
+            formData.append("access_key", "a9684fbc-5de2-4c7d-9daf-9fa89784ca66");
+            formData.append("subject", "New Inquiry from Ethos Drafting Studio Website");
 
-            emailjs.send("service_fgmxk6b", "template_0txpthm", formData)
-                .then(() => {
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                });
 
+                const data = await response.json();
+
+                if (response.ok) {
                     resetButton();
-
                     showModal(
                         "✔ Message Sent!",
                         "We will contact you soon.",
                         "success"
                     );
-
                     form.reset();
 
-                })
-                .catch(() => {
-
+                    // Form reset hone par hCaptcha bhi reset karein
+                    if (window.hcaptcha) {
+                        hcaptcha.reset();
+                    }
+                } else {
                     resetButton();
-
                     showModal(
                         "✖ Failed!",
-                        "Please try again later.",
+                        data.message || "Please try again later.",
                         "error"
                     );
-                });
+                }
+
+            } catch (error) {
+                resetButton();
+                showModal(
+                    "✖ Failed!",
+                    "Please try again later.",
+                    "error"
+                );
+            }
         });
 
         function resetButton() {
@@ -556,7 +605,7 @@
             submitBtn.innerHTML = originalBtnText;
         }
 
-        // Modal function
+        // Same Bootstrap Modal Function
         function showModal(title, message, type) {
             document.getElementById("modalTitle").innerText = title;
             document.getElementById("modalMessage").innerText = message;
