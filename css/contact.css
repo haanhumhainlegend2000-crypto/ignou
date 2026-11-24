@@ -71,22 +71,6 @@
       vertical-align: middle;
   }
 
-  /* Label: same gold color jo baaki text ka hai, bold */
-.footer-contact-content .office-label {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 2px;
-}
-
-/* Address items: icon top pe align */
-.footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 20px;
-}
 
 .footer-contact-item .icon-box {
     flex-shrink: 0;
